@@ -1,0 +1,23 @@
+{
+  "name": "node_learning",
+  "version": "1.0.0",
+  "description": "This app is used for learning purpose",
+  "main": "hello.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ayush1329/node_learnning.git"
+  },
+  "author": "Ayush Singhal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ayush1329/node_learnning/issues"
+  },
+  "homepage": "https://github.com/ayush1329/node_learnning#readme"
+}
