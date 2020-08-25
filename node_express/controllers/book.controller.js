@@ -4,7 +4,7 @@ exports.getAllbooks = async function (req, res) {
 	try {
 		let allBooks = await bookService.getAllBooks();
 		return res.status(200).json({
-			message: allBooks,
+			body: allBooks,
 			status: true
 		})
 	} catch (err) {
@@ -19,7 +19,7 @@ exports.getBookById = async function (req, res) {
 	try {
 		let book = await bookService.getBookById(req.params.bookId);
 		return res.status(200).json({
-			message: book,
+			body: book,
 			status: true
 		})
 	} catch (err) {
@@ -34,7 +34,7 @@ exports.deleteBookById = async function (req, res) {
 	try {
 		let book = await bookService.deleteBook(req.params.bookId);
 		return res.status(200).json({
-			message: book,
+			body: book,
 			status: true
 		})
 	} catch (err) {
@@ -49,7 +49,7 @@ exports.updateBook = async function (req, res) {
 	try {
 		let book = await bookService.updateBook(req.params.bookId, req.body.bookTitle);
 		return res.status(200).json({
-			message: book,
+			body: book,
 			status: true
 		})
 	} catch (err) {
@@ -68,7 +68,7 @@ exports.addBooks = async (req, res) => {
 		let result = await bookService.saveBooks(title, name, id);
 		if (result) {
 			return res.status(201).json({
-				message: result,
+				body: result,
 				status: true
 			});
 		}

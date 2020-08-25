@@ -9,7 +9,7 @@ export class AppService {
     }
 
     getAllbooks() {
-        return this.httpClient.get(`http://localhost:8080/books/getAllBooks`);
+        return this.httpClient.get(`http://localhost:8080/books/getAllBooks`).toPromise();
     }
 
     getBookById(id) {
