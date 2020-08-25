@@ -8,6 +8,7 @@ var mongoose = require('mongoose');
 var indexRouter = require('./routes/index');
 var bookRouter = require('./routes/books');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 
 
 require('dotenv/config');
@@ -23,6 +24,9 @@ mongoose.connect(
     console.log('Connected to DB');
   });
 
+
+// Middleware
+app.use(cors());
 
 app.use(bodyParser.json());  
 // view engine setup

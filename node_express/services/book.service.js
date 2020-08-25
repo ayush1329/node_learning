@@ -19,10 +19,24 @@ exports.getBookById = async (id) => {
     })
 }
 
-exports.saveBooks = async (name, title) => {
+exports.deleteBook = async (id) => {
+    return new Promise((resolve, reject) => {
+        let result = bookModel.remove({ _id: id });
+        resolve(result);
+    })
+}
+
+exports.updateBook = async (id, title) => {
+    return new Promise((resolve, reject) => {
+        let result = bookModel.updateOne({ _id: id }, { $set: { bookTitle: title } });
+        resolve(result);
+    })
+}
+
+exports.saveBooks = async (name, title, id) => {
     return new Promise((resolve, reject) => {
         const book = new bookModel({
-            bookId: 74575,
+            bookId: id,
             bookName: name,
             bookTitle: title
         });
