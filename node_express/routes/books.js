@@ -11,6 +11,10 @@ router.route('/').get(function () {
 
 router.route('/id/:bookId').get(bookController.getBookById);
 
+router.route('/delete/:bookId').delete(bookController.deleteBookById);
+
+router.route('/update/:bookId').patch(bookController.updateBook);
+
 router.route('/addBook').post(bookController.addBooks);
 
 router.route('/getAllBooks').get(bookController.getAllbooks);
