@@ -38,9 +38,8 @@ export class AppComponent implements OnInit {
 
   /** Helper Methods */
 
-  private getAllBooks() {
-    this.appService.getAllbooks().subscribe(res => {
-      console.log(res);
-    });
+  private async getAllBooks() {
+    let apiResposne = await this.appService.getAllbooks();
+    console.log(apiResposne);
   }
 }
