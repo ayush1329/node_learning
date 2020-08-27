@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
-const bookController = require('../controllers/book.controller')
+const bookController = require('../controllers/book.controller');
+const verify = require('../controllers/verify-token');
 
 /* GET book listing. */
 
@@ -9,7 +10,7 @@ router.route('/').get(function () {
 });
 
 
-router.route('/id/:bookId').get(bookController.getBookById);
+router.route('/id/:bookId', verify).get(bookController.getBookById);
 
 router.route('/delete/:bookId').delete(bookController.deleteBookById);
 
